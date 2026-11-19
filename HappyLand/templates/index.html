@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tondo Community</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h2>TONDO COMMUNITY</h2>
+    </header>
+
+    <main class="hero">
+
+        <img id="slideshow"
+     src="{{ url_for('static', filename='images/tondo-family.jpg') }}"
+     alt="A Filipino family in their community">
+
+        <div class="content">
+
+            <h1>A Better Tomorrow Starts With Us</h1>
+
+            <p>
+                Together, we can create a better future
+                for the people of our community.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/explore">Explore</a>
+
+                <a href="/act">Act & Extras</a>
+
+                <a href="/about">About Us</a>
+
+            </div>
+
+            <div class="arrows">
+    <button class="arrow left" onclick="previousImage()">&#10094;</button>
+
+    <button class="arrow right" onclick="nextImage()">&#10095;</button>
+</div>
+
+        </div>
+
+    </main>
+
+<script>
+    // List of homepage pictures
+    const images = [
+        "{{ url_for('static', filename='images/tondo-family.jpg') }}",
+        "{{ url_for('static', filename='images/tondo-community.jpg') }}",
+        "{{ url_for('static', filename='images/tondo-neighborhood.jpg') }}"
+    ];
+
+    // Starting image
+    let currentImage = 0;
+
+    // Display the next image
+    function nextImage() {
+        currentImage++;
+
+        if (currentImage >= images.length) {
+            currentImage = 0;
+        }
+
+        document.getElementById("slideshow").src = images[currentImage];
+    }
+
+    // Display the previous image
+    function previousImage() {
+        currentImage--;
+
+        if (currentImage < 0) {
+            currentImage = images.length - 1;
+        }
+
+        document.getElementById("slideshow").src = images[currentImage];
+    }
+</script>
+</body>
+</html>
