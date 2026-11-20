@@ -1,10 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Food for Thought</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
+    <header>
+
+    <div class="logo-container">
+
+        <img src="{{ url_for('static', filename='images/logo1.png') }}"
+             alt="Food for Thought Logo">
+
+        <h2>FOOD FOR THOUGHT</h2>
+
+    </div>
+
+</header>
+
+    <main class="hero">
+        <img class="background-image"
+     src="{{ url_for('static', filename='images/hunger2.jpg') }}"
+     alt="A Filipino family in their community">
+
+        <div class="content">
+
+            <h1>ABOUT US</h1>
+
+            <p>
+                Happyland, located in barangay 105 in Tondo Manila, is an informal settlement known for being near the former Smokey Mountain dumpsite. It’s widely known for its poverty with most residents lacking basic needs like water, food, education, and a stable shelter. Our group wants to help with the first problem as we believe that this violates their right to adequate food. For example, Happyland’s “signature” dish is pagpag which is chicken that is recycled from trash and then cooked again for consumption. According to the Philippine National Anti-Poverty Commission, constant consumption of “pagpag” for children can lead to stunted growth and malnutrition, as well as Hepatitis A, diarrhea and cholera. We want to dedicate this website to information about what people in Happyland go through and, hopefully, we can convince you to donate to project PEARLS to help supply food to those in Happyland.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/">← Back to Home</a>
+
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
 </html>

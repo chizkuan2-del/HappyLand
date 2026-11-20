@@ -1,10 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore - Food for thought</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
+    <header>
+
+    <div class="logo-container">
+
+        <img src="{{ url_for('static', filename='images/logo1.png') }}"
+             alt="Food for Thought Logo">
+
+        <h2>FOOD FOR THOUGHT</h2>
+
+    </div>
+
+</header>
+
+    <main class="hero">
+
+        <img id="explore-image"
+             src="{{ url_for('static', filename='images/explore.jpg') }}"
+             alt="Tondo Community">
+
+        <div class="content essay-container">
+
+            <h1 id="essay-title">MASID-DANAS</h1>
+
+            <div id="essay-text" class="essay-text">
+
+        <p>
+            In Happyland, a community in Barangay 105, Tondo, Manila,
+            many residents face poverty and harsh living conditions,
+            as described by Segarra (2023). The area is characterized
+            by overcrowded shantytowns and unstable shacks, surrounded
+            by waste and unpleasant odors. Due to financial difficulties
+            and a lack of affordable food, some residents turn to pagpag,
+            which consists of discarded food, particularly leftover meat
+            and bones, that is collected, cleaned, and cooked again.
+            EFE observed collectors like Roweno Cabuluc gathering
+            discarded food from restaurants and fast-food chains and
+            salvaging pieces of meat that still appear edible, which
+            are then cleaned and prepared by vendors such as Evelyn
+            Blasorca for sale. The affordability, accessibility,
+            portion size, familiarity, and taste of pagpag make it
+            a common food choice among consumers.
+        </p>
+
+        <p>
+            A study by Alonzo et al. (2024) involving 387 adult pagpag
+            consumers from Happyland, Aroma, and Payatas-B revealed
+            that motivations for purchasing pagpag included portion
+            size compared with ordinary eateries (3.95), familiarity
+            (3.95), and budget (3.91), with an overall weighted mean
+            (average survey score) of 3.61, interpreted as
+            <i>Strongly Agree</i>. Taste (3.91) and hunger relief (3.86)
+            were also strong motivations for consumption, both
+            interpreted as <i>Strongly Agree</i>.
+        </p>
+
+        <p>
+            However, reliance on pagpag raises health concerns,
+            as repeated consumption may contribute to malnutrition
+            and foodborne illnesses, particularly among children
+            (Philippine National Anti-Poverty Commission, as cited
+            in Segarra, 2023). Respondents also showed limited
+            awareness of these potential health risks, with overall
+            weighted means of 3.07 and 3.22 for immediate symptoms
+            and diseases, respectively, both interpreted as
+            <i>Not Aware</i> (Alonzo et al., 2024).
+        </p>
+
+        <p>
+            In response to food insecurity, Project PEARLS operates
+            a Hunger Relief Program that reports having provided
+            over 230,000 nutritious meals across its supported
+            communities since 2010, aiming to combat hunger and
+            support children's education (Project PEARLS, n.d.).
+            These efforts contribute to Sustainable Development
+            Goal 2: Zero Hunger, which aims to ensure access to
+            sufficient, safe, and nutritious food.
+        </p>
+
+
+            </div>
+            <div class="buttons">
+                <a href="/">Back to Home</a>
+            </div>
+
+        </div>
+
+        <div class="arrows">
+
+            <button class="arrow left"
+                    onclick="previousEssay()">&#10094;</button>
+
+            <button class="arrow right"
+                    onclick="nextEssay()">&#10095;</button>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const essays = [
+            {
+                title: "MASID-DANAS",
+                text: "In Happyland, a community in Barangay 105, Tondo, Manila, many residents face poverty and harsh living conditions, as described by Segarra (2023). The area is characterized by overcrowded shantytowns and unstable shacks, surrounded by waste and unpleasant odors. Due to financial difficulties and a lack of affordable food, some residents turn to pagpag, which consists of discarded food, particularly leftover meat and bones, that is collected, cleaned, and cooked again. EFE observed collectors like Roweno Cabuluc gathering discarded food from restaurants and fast-food chains and salvaging pieces of meat that still appear edible, which are then cleaned and prepared by vendors such as Evelyn Blasorca for sale. The affordability, accessibility, portion size, familiarity, and taste of pagpag make it a common food choice among consumers.\n" +
+                    "A study by Alonzo et al. (2024) involving 387 adult pagpag consumers from Happyland, Aroma, and Payatas-B revealed that motivations for purchasing pagpag included portion size compared with ordinary eateries (3.95), familiarity (3.95), and budget (3.91), with an overall weighted mean (average survey score) of 3.61, interpreted as Strongly Agree. Taste (3.91) and hunger relief (3.86) were also strong motivations for consumption, both interpreted as Strongly Agree. However, reliance on pagpag raises health concerns, as repeated consumption may contribute to malnutrition and foodborne illnesses, particularly among children (Philippine National Anti-Poverty Commission, as cited in Segarra, 2023). Respondents also showed limited awareness of these potential health risks, with overall weighted means of 3.07 and 3.22 for immediate symptoms and diseases, respectively, both interpreted as Not Aware (Alonzo et al., 2024). In response to food insecurity, Project PEARLS operates a Hunger Relief Program that reports having provided over 230,000 nutritious meals across its supported communities since 2010, aiming to combat hunger and support children's education (Project PEARLS, n.d.). These efforts contribute to Sustainable Development Goal 2: Zero Hunger, which aims to ensure access to sufficient, safe, and nutritious food.\n",
+                image: "{{ url_for('static', filename='images/explore.jpg') }}"
+            },
+
+           {
+                title: "SURI-NILAY",
+                text: "Food insecurity in Happyland is not just about the lack of food, it's also about the difficulty of accessing meals that are safe and nutritious. According to Project PEARLS (n.d.), some families in Tondo rely on pagpag, which are discarded food collected, cleaned, and recooked for consumption. This shows the struggles of families experiencing poverty and raises concerns about their food safety. Under Article 11 of the International Covenant on Economic, Social and Cultural Rights, everyone has the right to adequate food and freedom from hunger (United Nations General Assembly, 1966). This means that people deserve not only any edible things but a consistent source of food that won't make them sick (Committee on Economic, Social and Cultural Rights, 1999). Project PEARLS (n.d.) demonstrates one way organizations can help through its feeding program, which provides balanced meals to children in the communities it serves." +
+                    "\n" +
+                    "From the perspective of Catholic Social Teaching, this issue challenges us to uphold human dignity and practice the preferential option for the poor and vulnerable by giving more attention to those experiencing poverty. Pope Leo XIV (2025), in Dilexi Te, emphasized that caring for the poor requires more than sympathy; it calls for meaningful action against the conditions that keep people in such predicaments. Similarly, Matthew 25:35–40 reminds us that serving people in need is also an expression of serving Christ (New Revised Standard Version Bible, 1989). As Lasallians, we are therefore called to practice solidarity by recognizing the struggles of communities like Happyland and taking part in efforts that promote their well-being. While feeding programs can help address immediate hunger, lasting change also requires addressing the reason that caused them to be in their current situation in the first place." ,
+               image: "{{ url_for('static', filename='images/EXPLORE2.jpg') }}"
+            },
+            {
+                title: "TAYA-KILOS",
+                text: "As Lasallians, we are the few that are privileged enough to go to this school so we should do our part in not only recognizing but also trying to raise awareness in the issues that we see. In response to the food insecurity in Happyland, our group aims to tell people about the importance of adequate food through our website. We hope to educate others about the struggles faced by food-insecure communities, including the risks associated with relying on pagpag. We also encourage people to support organizations such as Project PEARLS, whose feeding programs help provide nutritious meals to children in need." +
+                    "\n" +
+                        "Beyond spreading awareness, we want to be responsible citizens by encouraging others to take part in efforts that address hunger and poverty. Through sharing reliable information and promoting legit charities that have already done good in the past, we hope to contribute to a community where everyone has access to safe and nutritious food. Although we recognize that our actions may not immediately solve food insecurity we still believe that even small, informed efforts can help inspire meaningful social change.",
+                image: "{{ url_for('static', filename='images/explore3.jpg') }}"
+            }
+        ];
+
+        let currentEssay = 0;
+
+        function displayEssay() {
+
+            document.getElementById("essay-title").textContent =
+                essays[currentEssay].title;
+
+            document.getElementById("essay-text").innerHTML =
+                 essays[currentEssay].text;
+
+            document.getElementById("explore-image").src =
+                essays[currentEssay].image;
+
+        }
+
+        function nextEssay() {
+
+            currentEssay++;
+
+            if (currentEssay >= essays.length) {
+                currentEssay = 0;
+            }
+
+            displayEssay();
+
+        }
+
+        function previousEssay() {
+
+            currentEssay--;
+
+            if (currentEssay < 0) {
+                currentEssay = essays.length - 1;
+            }
+
+            displayEssay();
+
+        }
+
+    </script>
 
 </body>
 </html>

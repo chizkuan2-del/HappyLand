@@ -1,10 +1,143 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Act & Extras - FOOD FOR THOUGHT</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
+    <header>
+
+        <div class="logo-container">
+
+            <img src="{{ url_for('static', filename='images/logo1.png') }}"
+                 alt="Food for Thought Logo">
+
+            <h2>FOOD FOR THOUGHT</h2>
+
+        </div>
+
+    </header>
+
+    <main class="hero">
+
+        <img id="act-image"
+             src="{{ url_for('static', filename='images/act-community.jpg') }}"
+             alt="Community volunteers">
+
+        <div class="content">
+
+            <h1 id="act-title">ACTS</h1>
+
+            <p id="act-text">
+                Everyone deserves access to clean, safe, and nutritious food.
+                Together, we can help create a healthier community.
+            </p>
+
+            <div class="buttons">
+
+                <a id="act-link"
+                   href="https://projectpearls.org/donate"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Donate to Project PEARLS
+                </a>
+
+                <a href="/">Back to Home</a>
+
+            </div>
+
+        </div>
+
+        <div class="arrows">
+
+            <button class="arrow left"
+                    onclick="previousAct()">&#10094;</button>
+
+            <button class="arrow right"
+                    onclick="nextAct()">&#10095;</button>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const acts = [
+
+            {
+                title: "ACTS",
+                text: "Everyone deserves access to clean, safe, and nutritious food. You can help make a difference by supporting Project PEARLS and its efforts to provide food for communities experiencing poverty.",
+                image: "{{ url_for('static', filename='images/act-community.jpg') }}",
+                button: "Donate to Project PEARLS",
+                link: "https://projectpearls.org/donate"
+            },
+
+            {
+                title: "EXTRAS",
+                text: "Want to learn more about our project? Explore our additional materials, references, and other information about HappyLand, food insecurity, and the importance of adequate food.",
+                image: "{{ url_for('static', filename='images/act-extras.jpg') }}",
+                button: "View Extras",
+                link: "https://drive.google.com/drive/folders/1558M759gEmmEf4bz_pPn9v1gbt1CAJJ8?usp=sharing"
+            }
+
+        ];
+
+        let currentAct = 0;
+
+        function displayAct() {
+
+            document.getElementById("act-title").textContent =
+                acts[currentAct].title;
+
+            document.getElementById("act-text").textContent =
+                acts[currentAct].text;
+
+            document.getElementById("act-image").src =
+                acts[currentAct].image;
+
+            document.getElementById("act-link").textContent =
+                acts[currentAct].button;
+
+            document.getElementById("act-link").href =
+                acts[currentAct].link;
+
+        }
+
+        function nextAct() {
+
+            currentAct++;
+
+            if (currentAct >= acts.length) {
+                currentAct = 0;
+            }
+
+            displayAct();
+
+        }
+
+        function previousAct() {
+
+            currentAct--;
+
+            if (currentAct < 0) {
+                currentAct = acts.length - 1;
+            }
+
+            displayAct();
+
+        }
+
+    </script>
 
 </body>
 </html>

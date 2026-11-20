@@ -113,3 +113,146 @@ header h2 {
 .arrows button:hover {
     background-color: #c18b54;
 }
+.explore-image {
+    width: 80%;
+    max-width: 800px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+}
+
+.essay-container {
+    max-width: 750px;
+    padding: 25px;
+}
+
+.essay-container h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.essay-text {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.essay-text p {
+    margin-bottom: 20px;
+    text-indent: 35px;
+}
+
+/* Scrollbar design */
+.essay-text::-webkit-scrollbar {
+    width: 7px;
+}
+
+.essay-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.essay-container {
+    max-width: 750px;
+    padding: 25px;
+}
+
+.essay-container h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.essay-text {
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 18px 10px 5px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+.essay-text p {
+    margin-bottom: 20px;
+    text-indent: 35px;
+}
+
+/* Chrome, Edge, and Safari scrollbar */
+
+.essay-text::-webkit-scrollbar {
+    width: 7px;
+}
+
+.essay-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.essay-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* EXPLORE ESSAY SCROLLING */
+
+.essay-container {
+    max-width: 750px;
+    padding: 25px;
+}
+
+.essay-container h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.essay-text {
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 10px 18px 10px 5px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+.essay-text p {
+    margin-bottom: 20px;
+    text-indent: 35px;
+}
+
+.essay-text::-webkit-scrollbar {
+    width: 7px;
+}
+
+.essay-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.logo-container h2 {
+    margin: 0;
+}

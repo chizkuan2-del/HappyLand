@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tondo Community</title>
+    <title>Food for thought</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -15,8 +15,17 @@
 <body>
 
     <header>
-        <h2>TONDO COMMUNITY</h2>
-    </header>
+
+    <div class="logo-container">
+
+        <img src="{{ url_for('static', filename='images/logo1.png') }}"
+             alt="Food for Thought Logo">
+
+        <h2>FOOD FOR THOUGHT</h2>
+
+    </div>
+
+</header>
 
     <main class="hero">
 
@@ -26,7 +35,7 @@
 
         <div class="content">
 
-            <h1>A Better Tomorrow Starts With Us</h1>
+            <h1>Help Make Happyland Happy</h1>
 
             <p>
                 Together, we can create a better future
@@ -41,6 +50,9 @@
 
                 <a href="/about">About Us</a>
 
+        </div>
+
+
             </div>
 
             <div class="arrows">
@@ -48,9 +60,6 @@
 
     <button class="arrow right" onclick="nextImage()">&#10095;</button>
 </div>
-
-        </div>
-
     </main>
 
 <script>
